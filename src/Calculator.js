@@ -6,12 +6,21 @@ const Calculator = () => {
     const [ storedNumberOne, setStoredNumberOne ] = useState( "" );
     const [ storedNumberTwo, setStoredNumberTwo ] = useState( "" );
     const [ storedOperation, setStoredOperation ] = useState( "" );
+    const [ isAnswer, setIsAnswer ] = useState( false );
 
     const [ displayedNumber, setDisplayedNumber ] = useState( "" );
 
 
     const handleNumberClick = ( number ) => {
         let newStoredNumber
+
+        if( isAnswer ) {
+            handleAllClearClick()
+            setStoredNumberOne( number )
+            setDisplayedNumber( number )
+        }
+        
+        else 
         if( storedOperation === ""){
             newStoredNumber = storedNumberOne
             newStoredNumber += number
@@ -35,42 +44,69 @@ const Calculator = () => {
         setStoredNumberTwo( "" )
         setDisplayedNumber( "" )
         setStoredOperation( "" )
+        setIsAnswer( false )
     };
 
     const handleDeleteClick = () => {
-        if( storedOperation === "" ){
+        if( isAnswer ){
+            handleAllClearClick()
+        }
+        else if( storedOperation === "" ){
             let newStoredNumber = storedNumberOne.slice( 0, -1 )
             //returning the whole string without the last index
             setStoredNumberOne( newStoredNumber )
             setDisplayedNumber( newStoredNumber )
         }else{
-            if( storedNumberTwo === "" ){
-                handleAllClearClick()
-            }else{
+            // if( storedNumberTwo === "" ){
+            //     handleAllClearClick()
+            // }else{
             let newStoredNumber = storedNumberTwo.slice( 0, -1 )
             //returning the whole string without the last index
             setStoredNumberTwo( newStoredNumber )
             setDisplayedNumber( newStoredNumber )
-        }}
+        // }
+    }
         
     };
 
-    const handleAddClick = ( ) => {
+    const handleOperationClick = ( operation ) => {
         if( storedOperation === "" ){
-            setStoredOperation( "+" )
+            setStoredOperation( operation )
             setDisplayedNumber( "" )
         } else{
             handleEqualsClick()
         }  
+        setIsAnswer( false )
     };
+
 
     const handleEqualsClick = () => {
         if( storedOperation === "+" ){
             let answer = parseFloat( storedNumberOne ) + parseFloat( storedNumberTwo )
             setDisplayedNumber( answer )
-            setStoredNumberOne( answer )
+            setStoredNumberOne( answer.toString() )
             setStoredNumberTwo( "" )
         }
+        else if( storedOperation === "-" ){
+            let answer = parseFloat( storedNumberOne ) - parseFloat( storedNumberTwo )
+            setDisplayedNumber( answer )
+            setStoredNumberOne( answer.toString() )
+            setStoredNumberTwo( "" )
+        }
+        else if( storedOperation === "/" ){
+            let answer = parseFloat( storedNumberOne ) / parseFloat( storedNumberTwo )
+            setDisplayedNumber( answer )
+            setStoredNumberOne( answer.toString() )
+            setStoredNumberTwo( "" )
+        }
+        else if( storedOperation === "*" ){
+            let answer = parseFloat( storedNumberOne ) * parseFloat( storedNumberTwo )
+            setDisplayedNumber( answer )
+            setStoredNumberOne( answer.toString() )
+            setStoredNumberTwo( "" )
+        }
+        setStoredOperation( "" )
+        setIsAnswer( true )
     }
 
     return(
@@ -90,10 +126,10 @@ const Calculator = () => {
             <button onClick={ () => handleNumberClick("8") }>8</button>
             <button onClick={ () => handleNumberClick("9") }>9</button>
             <button onClick={ () => handleNumberClick("0") }>0</button>
-            <button onClick={ () => handleAddClick() }>+</button>
-            <button>-</button>
-            <button>/</button>
-            <button>x</button>
+            <button onClick={ () => handleOperationClick("+") }>+</button>
+            <button onClick={ () => handleOperationClick("-") }>-</button>
+            <button onClick={ () => handleOperationClick("/") }>/</button>
+            <button onClick={ () => handleOperationClick("*") }>x</button>
             <button onClick={ () => handleEqualsClick() }>=</button>
 
         </div>
