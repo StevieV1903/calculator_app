@@ -38,20 +38,38 @@ const Calculator = () => {
     };
 
     const handleDeleteClick = () => {
-        let newStoredNumber = storedNumberOne.slice( 0, -1 )
-        //returning the whole string without the last index
-        setStoredNumberOne( newStoredNumber )
-        setDisplayedNumber( newStoredNumber )
+        if( storedOperation === "" ){
+            let newStoredNumber = storedNumberOne.slice( 0, -1 )
+            //returning the whole string without the last index
+            setStoredNumberOne( newStoredNumber )
+            setDisplayedNumber( newStoredNumber )
+        }else{
+            if( storedNumberTwo === "" ){
+                handleAllClearClick()
+            }else{
+            let newStoredNumber = storedNumberTwo.slice( 0, -1 )
+            //returning the whole string without the last index
+            setStoredNumberTwo( newStoredNumber )
+            setDisplayedNumber( newStoredNumber )
+        }}
+        
     };
 
     const handleAddClick = ( ) => {
-        setStoredOperation( "+" )
-        setDisplayedNumber( "" )
+        if( storedOperation === "" ){
+            setStoredOperation( "+" )
+            setDisplayedNumber( "" )
+        } else{
+            handleEqualsClick()
+        }  
     };
 
     const handleEqualsClick = () => {
         if( storedOperation === "+" ){
-            setDisplayedNumber( parseFloat( storedNumberOne ) + parseFloat( storedNumberTwo ) )
+            let answer = parseFloat( storedNumberOne ) + parseFloat( storedNumberTwo )
+            setDisplayedNumber( answer )
+            setStoredNumberOne( answer )
+            setStoredNumberTwo( "" )
         }
     }
 
