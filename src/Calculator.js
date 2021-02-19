@@ -64,18 +64,20 @@ const Calculator = () => {
             handleAllClearClick()
         }
         else if( storedOperation === "" ){
+            if( storedNumberOne !== "0" ){
             let newStoredNumber = storedNumberOne.slice( 0, -1 )
             //returning the whole string without the last index
             setStoredNumberOne( newStoredNumber )
-            setDisplayedNumber( newStoredNumber )
+            setDisplayedNumber( newStoredNumber )}
         }else{
             // if( storedNumberTwo === "" ){
             //     handleAllClearClick()
             // }else{
+            if( storedNumberTwo !== "0" ){
             let newStoredNumber = storedNumberTwo.slice( 0, -1 )
             //returning the whole string without the last index
             setStoredNumberTwo( newStoredNumber )
-            setDisplayedNumber( newStoredNumber )
+            setDisplayedNumber( newStoredNumber )}
         // }
     }
         
