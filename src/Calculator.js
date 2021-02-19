@@ -3,12 +3,12 @@ import "./Calculator.css";
 
 const Calculator = () => {
 
-    const [ storedNumberOne, setStoredNumberOne ] = useState( "" );
-    const [ storedNumberTwo, setStoredNumberTwo ] = useState( "" );
+    const [ storedNumberOne, setStoredNumberOne ] = useState( "0" );
+    const [ storedNumberTwo, setStoredNumberTwo ] = useState( "0" );
     const [ storedOperation, setStoredOperation ] = useState( "" );
     const [ isAnswer, setIsAnswer ] = useState( false );
 
-    const [ displayedNumber, setDisplayedNumber ] = useState( "" );
+    const [ displayedNumber, setDisplayedNumber ] = useState( "0" );
 
 
     const handleNumberClick = ( number ) => {
@@ -22,27 +22,39 @@ const Calculator = () => {
         
         else 
         if( storedOperation === ""){
+            if( number === "." && !storedNumberOne.includes(".")) {
+            newStoredNumber = storedNumberOne
+            newStoredNumber += number
+            setStoredNumberOne( newStoredNumber )
+            setDisplayedNumber( newStoredNumber )
+            } else if( number !== "." ){
             newStoredNumber = storedNumberOne
             newStoredNumber += number
             setStoredNumberOne( newStoredNumber )
             setDisplayedNumber( newStoredNumber )
         }
+    }
         else{
-            newStoredNumber = storedNumberTwo
-            newStoredNumber += number
-            setStoredNumberTwo( newStoredNumber )
-            setDisplayedNumber( newStoredNumber )
-            // console.log(storedNumberTwo)
-            // console.log(newStoredNumber)
+            if( number === "." && !storedNumberTwo.includes(".")) {
+                newStoredNumber = storedNumberTwo
+                newStoredNumber += number
+                setStoredNumberTwo( newStoredNumber )
+                setDisplayedNumber( newStoredNumber )
+                } else if( number !== "." ){
+                newStoredNumber = storedNumberTwo
+                newStoredNumber += number
+                setStoredNumberTwo( newStoredNumber )
+                setDisplayedNumber( newStoredNumber )
+            }
         }
         
         // console.log(newStoredNumber)
     };
 
     const handleAllClearClick = () => {
-        setStoredNumberOne( "" )
-        setStoredNumberTwo( "" )
-        setDisplayedNumber( "" )
+        setStoredNumberOne( "0" )
+        setStoredNumberTwo( "0" )
+        setDisplayedNumber( "0" )
         setStoredOperation( "" )
         setIsAnswer( false )
     };
@@ -72,7 +84,7 @@ const Calculator = () => {
     const handleOperationClick = ( operation ) => {
         if( storedOperation === "" ){
             setStoredOperation( operation )
-            setDisplayedNumber( "" )
+            setDisplayedNumber( "0" )
         } else{
             handleEqualsClick()
         }  
@@ -85,34 +97,38 @@ const Calculator = () => {
             let answer = parseFloat( storedNumberOne ) + parseFloat( storedNumberTwo )
             setDisplayedNumber( answer )
             setStoredNumberOne( answer.toString() )
-            setStoredNumberTwo( "" )
+            setStoredNumberTwo( "0" )
         }
         else if( storedOperation === "-" ){
             let answer = parseFloat( storedNumberOne ) - parseFloat( storedNumberTwo )
             setDisplayedNumber( answer )
             setStoredNumberOne( answer.toString() )
-            setStoredNumberTwo( "" )
+            setStoredNumberTwo( "0" )
         }
         else if( storedOperation === "/" ){
             let answer = parseFloat( storedNumberOne ) / parseFloat( storedNumberTwo )
             setDisplayedNumber( answer )
             setStoredNumberOne( answer.toString() )
-            setStoredNumberTwo( "" )
+            setStoredNumberTwo( "0" )
         }
         else if( storedOperation === "*" ){
             let answer = parseFloat( storedNumberOne ) * parseFloat( storedNumberTwo )
             setDisplayedNumber( answer )
             setStoredNumberOne( answer.toString() )
-            setStoredNumberTwo( "" )
+            setStoredNumberTwo( "0" )
         }
         setStoredOperation( "" )
         setIsAnswer( true )
-    }
+    };
+
+    // const handlePointClick = () => {
+
+    // };
 
     return(
         <div>
 
-            <p> { displayedNumber } </p>
+            <p> { +parseFloat(displayedNumber).toFixed( 8 ) } </p>
 
             <button onClick={ () => handleAllClearClick() }>AC</button>
             <button onClick={ () => handleDeleteClick() }>C</button>
@@ -126,6 +142,7 @@ const Calculator = () => {
             <button onClick={ () => handleNumberClick("8") }>8</button>
             <button onClick={ () => handleNumberClick("9") }>9</button>
             <button onClick={ () => handleNumberClick("0") }>0</button>
+            <button onClick={ () => handleNumberClick(".") }>.</button>
             <button onClick={ () => handleOperationClick("+") }>+</button>
             <button onClick={ () => handleOperationClick("-") }>-</button>
             <button onClick={ () => handleOperationClick("/") }>/</button>
