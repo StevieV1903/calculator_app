@@ -84,7 +84,7 @@ const Calculator = () => {
     const handleOperationClick = ( operation ) => {
         if( storedOperation === "" ){
             setStoredOperation( operation )
-            setDisplayedNumber( "0" )
+            // setDisplayedNumber( "" )
         } else{
             handleEqualsClick()
         }  
