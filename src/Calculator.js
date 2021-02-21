@@ -107,13 +107,13 @@ const Calculator = () => {
             setStoredNumberOne( answer.toString() )
             setStoredNumberTwo( "0" )
         }
-        else if( storedOperation === "/" ){
+        else if( storedOperation === "÷" ){
             let answer = parseFloat( storedNumberOne ) / parseFloat( storedNumberTwo )
             setDisplayedNumber( answer )
             setStoredNumberOne( answer.toString() )
             setStoredNumberTwo( "0" )
         }
-        else if( storedOperation === "*" ){
+        else if( storedOperation === "x" ){
             let answer = parseFloat( storedNumberOne ) * parseFloat( storedNumberTwo )
             setDisplayedNumber( answer )
             setStoredNumberOne( answer.toString() )
@@ -123,34 +123,64 @@ const Calculator = () => {
         setIsAnswer( true )
     };
 
+    const limitDisplayToTen = ( displayedNumber ) => {
+        let shortenedDisplayNumber = displayedNumber.slice( 0, 10 )
+        setDisplayedNumber( shortenedDisplayNumber )
+    }
+
+    
+
     // const handlePointClick = () => {
 
     // };
 
+
+    // const limitDisplayToTen = ( ) => {
+    // document.getElementById("display").maxLength="10";
+    // }
+
     return(
-        <div>
+        <div className="screen">
+       
+        <div className="calculator-container">
+            <div className="calculator-screen">
+                
+            <p> { storedOperation } </p>
+            <p> { +parseFloat(displayedNumber).toFixed( 7 ) } </p>
+            {/* <p id="display"> { limitDisplayToTen(+parseFloat(displayedNumber).toFixed( 7 )) } </p> */}
+               
+            </div>
 
-            <p> { +parseFloat(displayedNumber).toFixed( 8 ) } </p>
+            <div className="calculator-digits-container">
+            
+            <button className="operator-button" onClick={ () => handleOperationClick("+") }>+</button>
+            <button className="operator-button" onClick={ () => handleOperationClick("-") }>-</button>
+            <button className="operator-button" onClick={ () => handleOperationClick("÷") }>÷</button>
+            <button className="operator-button" onClick={ () => handleOperationClick("x") }>x</button>
 
-            <button onClick={ () => handleAllClearClick() }>AC</button>
-            <button onClick={ () => handleDeleteClick() }>C</button>
-            <button onClick={ () => handleNumberClick("1") }>1</button>
-            <button onClick={ () => handleNumberClick("2") }>2</button>
-            <button onClick={ () => handleNumberClick("3") }>3</button>
-            <button onClick={ () => handleNumberClick("4") }>4</button>
-            <button onClick={ () => handleNumberClick("5") }>5</button>
-            <button onClick={ () => handleNumberClick("6") }>6</button>
             <button onClick={ () => handleNumberClick("7") }>7</button>
             <button onClick={ () => handleNumberClick("8") }>8</button>
             <button onClick={ () => handleNumberClick("9") }>9</button>
-            <button onClick={ () => handleNumberClick("0") }>0</button>
-            <button onClick={ () => handleNumberClick(".") }>.</button>
-            <button onClick={ () => handleOperationClick("+") }>+</button>
-            <button onClick={ () => handleOperationClick("-") }>-</button>
-            <button onClick={ () => handleOperationClick("/") }>/</button>
-            <button onClick={ () => handleOperationClick("*") }>x</button>
-            <button onClick={ () => handleEqualsClick() }>=</button>
+            <button className="decimal-point-button" onClick={ () => handleNumberClick(".") }>.</button>
 
+            <button onClick={ () => handleNumberClick("4") }>4</button>
+            <button onClick={ () => handleNumberClick("5") }>5</button>
+            <button onClick={ () => handleNumberClick("6") }>6</button>
+
+            <button onClick={ () => handleNumberClick("1") }>1</button>
+            <button onClick={ () => handleNumberClick("2") }>2</button>
+            <button onClick={ () => handleNumberClick("3") }>3</button>
+
+            <button className="all-clear-button" onClick={ () => handleAllClearClick() }>AC</button>
+            <button onClick={ () => handleDeleteClick() }>del</button>
+            <button onClick={ () => handleNumberClick("0") }>0</button>
+
+                        
+          
+            <button className="equal-sign-button" onClick={ () => handleEqualsClick() }>=</button>
+            </div>
+
+        </div>
         </div>
     )
 };

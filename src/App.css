@@ -1,3 +1,22 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+
+.app {
   text-align: center;
+  box-sizing: border-box;
+  /* background-color: #e2e2e2; */
 }
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+.app-title {
+  padding-top: 60px;
+  padding-bottom: 20px;
+  font-family: 'Special Elite', cursive;
+  font-size: 42px;
+  color: #000095;
+}
+
