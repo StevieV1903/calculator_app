@@ -90,6 +90,12 @@
       margin: 10px 0px;
   }
 
+  .calculator-screen-numbers {
+    /* overflow: hidden; */
+    word-break: break-all;
+    text-align: right;
+  }
+
   /* Responsive Rules */
 
   @media screen and (max-width: 450px) {
