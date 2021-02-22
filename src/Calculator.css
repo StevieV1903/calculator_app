@@ -21,8 +21,8 @@
     width: 100%;
     font-size: 50px;
     font-weight: bold;
-    height: 100px;
-    /* height: auto; */
+    /* height: 100px; */
+    height: auto;
     border: solid 2px black;
     border-radius: 10px;
     background-color: black;
