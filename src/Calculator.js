@@ -146,8 +146,8 @@ const Calculator = () => {
             <div className="calculator-screen">
                 
             <p> { storedOperation } </p>
-            <p className="calculator-screen-numbers"> { +parseFloat(displayedNumber).toFixed( 7 ) } </p>
-            {/* <p id="display"> { limitDisplayToTen(+parseFloat(displayedNumber).toFixed( 7 )) } </p> */}
+            <p className="calculator-screen-numbers"> { +parseFloat(displayedNumber).toFixed( 8 ) } </p>
+            {/* <p id="display"> { limitDisplayToTen(+parseFloat(displayedNumber).toFixed( 8 )) } </p> */}
                
             </div>
 
