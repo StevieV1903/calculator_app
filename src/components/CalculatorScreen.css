@@ -1,0 +1,27 @@
+.calculator-screen {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-family: 'Varela Round', sans-serif;
+	width: 100%;
+	font-size: 50px;
+	font-weight: bold;
+	height: auto;
+	border: solid 2px black;
+	border-radius: 10px;
+	background-color: black;
+	color: #f0f0f0;
+	padding: 0 10px;
+}
+
+.calculator-screen-numbers {
+	word-break: break-all;
+	text-align: right;
+}
+
+@media screen and (max-width: 450px) {
+	.calculator-screen {
+		font-size: 36px;
+		height: 70px;
+	}
+}

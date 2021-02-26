@@ -1,0 +1,8 @@
+.operator-button {
+	background-color: #ffb52b;
+	color: #fff;
+	border: solid 2px #c58000;
+}
+.operator-button:hover {
+	background-color: #ffa600;
+}

@@ -1,116 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 .calculator-container {
-    padding: 5px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    background-color: #bbbbbb;
-    
-  }
-  .calculator-screen {
-    display: flex;
-    /* flex-wrap: wrap; */
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Varela Round', sans-serif;
-    width: 100%;
-    font-size: 50px;
-    font-weight: bold;
-    /* height: 100px; */
-    height: auto;
-    border: solid 2px black;
-    border-radius: 10px;
-    background-color: black;
-    color: #f0f0f0;
-    padding: 0 10px;
-    /* overflow: hidden; */
-  }
-  
-  button {
-    font-family: 'Varela Round', sans-serif;
-    font-weight: bold;
-    height: 60px;
-    background-color: #fff;
-    cursor: pointer;
-    border-radius: 10px;
-    border: 1px solid #8d8a8a;
-    font-size: 36px;
-    color: #333;
-  }
-  button:hover {
-    background-color: #e9e9e9;
-  }
-  button:active {
-    transform: translateY(2px);
-  }
-  
-  .operator-button {
-    background-color: #ffb52b;
-    color: #fff;
-    border: solid 2px #c58000
-  }
-  .operator-button:hover {
-    background-color: #ffa600;
-  }
-  
-  .all-clear-button {
-    font-family: 'Varela Round', sans-serif;
-    background-color: #fb4c52;
-    border-color: #900005;
-    color: #fff;
-  }
-  
-  .all-clear-button:hover {
-    background-color: #900005;
-  }
-  
-  .equal-sign-button {
-    background-color: #2e86c0;
-    border-color: #004574;
-    color: #fff;
-    grid-row-start: 3;
-    grid-row-end: 6;
-    grid-column-start: 4;
-    grid-column-end: 5;
-    height: 100%;
-  }
-  
-  .equal-sign-button:hover {
-    background-color: #004574;
-  }
-  .calculator-digits-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 10px;
-      margin: 10px 0px;
-  }
+	padding: 5px;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	background-color: #bbbbbb;
+}
 
-  .calculator-screen-numbers {
-    /* overflow: hidden; */
-    word-break: break-all;
-    text-align: right;
-  }
+button {
+	font-family: 'Varela Round', sans-serif;
+	font-weight: bold;
+	height: 60px;
+	background-color: #fff;
+	cursor: pointer;
+	border-radius: 10px;
+	border: 1px solid #8d8a8a;
+	font-size: 36px;
+	color: #333;
+}
 
-  /* Responsive Rules */
+button:hover {
+	background-color: #e9e9e9;
+}
 
-  @media screen and (max-width: 450px) {
-	
-    .calculator-container {
-        width: 320px;
-    }
+button:active {
+	transform: translateY(2px);
+}
 
-    .calculator-screen {
-        font-size: 36px;
-        height: 70px;
-    }
+.all-clear-button {
+	font-family: 'Varela Round', sans-serif;
+	background-color: #fb4c52;
+	border-color: #900005;
+	color: #fff;
+}
 
-    button {
-        font-size: 30px;
-    }
-	
+.all-clear-button:hover {
+	background-color: #900005;
+}
+
+.equal-sign-button {
+	background-color: #2e86c0;
+	border-color: #004574;
+	color: #fff;
+	grid-row-start: 3;
+	grid-row-end: 6;
+	grid-column-start: 4;
+	grid-column-end: 5;
+	height: 100%;
+}
+
+.equal-sign-button:hover {
+	background-color: #004574;
+}
+
+.calculator-digits-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 10px;
+	margin: 10px 0px;
+}
+
+/* Responsive Rules */
+
+@media screen and (max-width: 450px) {
+	.calculator-container {
+		width: 320px;
+	}
+
+	button {
+		font-size: 30px;
+	}
 }
