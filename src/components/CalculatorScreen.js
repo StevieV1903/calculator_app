@@ -18,6 +18,14 @@ const CalculatorScreen = ({ storedOperation, displayedNumber }) => {
 			formattedDisplayedNumber = displayedNumber.slice(zeroCounter);
 		}
 
+		let index = formattedDisplayedNumber.indexOf('.');
+		if (index >= 0) {
+			formattedDisplayedNumber = +parseFloat(formattedDisplayedNumber.substring(0, index + 8));
+			// formattedDisplayedNumber = formattedDisplayedNumber.substring(0, index + 8);
+			if (!formattedDisplayedNumber.toString().includes('.')) {
+				formattedDisplayedNumber = formattedDisplayedNumber.toString().concat('.');
+			}
+		}
 		return formattedDisplayedNumber;
 	};
 
