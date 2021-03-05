@@ -69,7 +69,7 @@ const Calculator = () => {
 	return (
 		<div className="screen">
 			<div className="calculator-container">
-				<CalculatorScreen storedOperation={storedOperation} displayedNumber={displayedNumber} />
+				<CalculatorScreen storedOperation={storedOperation} displayedNumber={displayedNumber} isAnswer={ isAnswer } />
 
 				<div className="calculator-digits-container">
 					<OperatorButton
