@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="screen">
-      {/* <h1 className="app-title">Cal-cool-8-or</h1> */}
+      <h1 className="app-title">Calculator Application</h1>
       <Calculator />
       </div>
     </div>
