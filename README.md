@@ -18,6 +18,7 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
+<img width="398" alt="Calculator App Screenshot" src="https://user-images.githubusercontent.com/56137428/117429577-1a003400-af1f-11eb-9c78-11f75399edce.png">
 
 
 
