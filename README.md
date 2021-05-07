@@ -1,6 +1,6 @@
 # [Calculator App](https://main.d32umybxq09b6x.amplifyapp.com/)
 
-Snooker Scorer is a fully responsive web application that allows you to keep score during a snooker match, either if you are watching or playing with a friend. It includes a set-up page that inputs and stores players' names, lets you pick who is to break first and also lets the user decide how many frames the match will last for.
+A fully responsive calculator application built using Javascript and React as the web framework. Using grid style CSS for the layout and react hooks and state, it acts and behaves like a calculator should - allowing the user to complete mathematical operations.
 
 This responsive project was created by Steve Vance, Chris Fraser and James Fraser and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
