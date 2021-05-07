@@ -1,24 +1,42 @@
-Created by Chris Fraser, Steve Vance and James Fraser.
+# [Calculator App](https://main.d32umybxq09b6x.amplifyapp.com/)
 
-Try our <a href="https://main.d32umybxq09b6x.amplifyapp.com/">Calculator App</a>.
+Snooker Scorer is a fully responsive web application that allows you to keep score during a snooker match, either if you are watching or playing with a friend. It includes a set-up page that inputs and stores players' names, lets you pick who is to break first and also lets the user decide how many frames the match will last for.
 
-# Getting Started with Create React App
+This responsive project was created by Steve Vance, Chris Fraser and James Fraser and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The application is hosted on AWS Amplify.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Installation
 
-### `npm install`
+### Clone
 
-### `npm start`
+- Clone this repo to your local machine 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Setup
 
+> Install packages
+
+```shell
+> npm install
+```
+
+> Start the application
+
+```shell
+> npm start
+```
+
+> Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+
+### Screenshot
 
 <img width="398" alt="Calculator App Screenshot" src="https://user-images.githubusercontent.com/56137428/117429577-1a003400-af1f-11eb-9c78-11f75399edce.png">
+
+
+
 
 
 
